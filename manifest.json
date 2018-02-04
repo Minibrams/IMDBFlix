@@ -17,8 +17,7 @@
             "48" : "images/imdbflix_48.png",
             "32" : "images/imdbflix_32.png",
             "16" : "images/imdbflix_16.png"
-        },
-        "default_popup" : "options.html"
+        }
     },
     "content_scripts" : [
         {
