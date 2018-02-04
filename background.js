@@ -9,15 +9,21 @@ setInterval(() => {
         hoveredTitle != undefined  ) {
 
         currentTitle = hoveredTitle;
-        currentTitleJSONUrl = getAPISearchURL(currentTitle);
+        currentTitleJSONUrl = getAPISearchURL(currentTitle.innerHTML);
 
-        $.getJSON(currentTitleJSONUrl, data => {
-            console.log(data);
+        console.log("Title is: " + currentTitle.innerHTML);
+        console.log("API is: " + currentTitleJSONUrl);
+
+        $.getJSON(currentTitleJSONUrl, function (data) {
+            console.log(data.imdbRating);
         });
     }
 }, 1000);
 
 function getAPISearchURL(title) {
-    console.log("Reading from: www.omdbapi.com/?apikey=" + API_KEY + "&t=" + title);
-    return "www.omdbapi.com/?apikey=" + API_KEY + "&t=" + title; 
+    return "https://www.omdbapi.com/?apikey=" + API_KEY + "&t=\"" + title + "\"" ; 
+}
+
+function logResults(json) {
+    console.log(json);
 }

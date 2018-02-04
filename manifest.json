@@ -15,6 +15,11 @@
             "matches" : ["*://www.netflix.com/*"],
             "js" : ["thirdparty/jquery.js", "background.js"]
         }
+    ],
+
+    "permissions" : [
+        "*://www.omdbapi.com/*",
+        "*://www.netflix.com/*"
     ]
 }
 
