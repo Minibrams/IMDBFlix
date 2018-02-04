@@ -23,10 +23,15 @@ setInterval(() => {
 }, 1000);
 
 // Given a movie title, returns the appropriate API url
+// You need your own API key for this. Mine is saved in a separate document.
 function getAPISearchURL(title) {
     return "https://www.omdbapi.com/?apikey=" + API_KEY + "&t=\"" + title + "\"" ; 
 }
 
 function getFormattedRating(title, rating) {
-    return title + "<br>(IMDB: " + rating + ")";
+    let color = rating > 9 ? "green" : 
+                rating > 7 ? "yellow" : 
+                rating > 5 ? "orange" : "red";
+                
+    return title + "<br><span style = \"background-color: rgba(0, 0, 0, 0.4); padding: 2px 20px 2px 20px;\">IMDB: <span style = \"font-weight: bold; color: " + color + "\">" + rating + "</span></span>";
 } 
