@@ -4,14 +4,21 @@
     "name" : "IMDBFlix",
     "description" : "Automatically fetches IMDB rating when hovering over movies on Netflix.",
     "version" : "1.0",
-    
+    "icons" : {
+        "128" : "images/imdbflix_128.png",
+        "48" : "images/imdbflix_48.png",
+        "32" : "images/imdbflix_32.png",
+        "16" : "images/imdbflix_16.png"
+    },
+
     "page_action" : {
         "default_icon" : {
             "128" : "images/imdbflix_128.png",
             "48" : "images/imdbflix_48.png",
             "32" : "images/imdbflix_32.png",
             "16" : "images/imdbflix_16.png"
-        }
+        },
+        "default_popup" : "options.html"
     },
     "content_scripts" : [
         {
@@ -24,7 +31,8 @@
 
     "permissions" : [
         "*://www.omdbapi.com/*",
-        "*://www.netflix.com/*"
+        "*://www.netflix.com/*",
+        "storage"
     ]
 }
 
