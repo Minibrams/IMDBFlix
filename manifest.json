@@ -1,0 +1,19 @@
+{
+    "manifest-version" : 2,
+    
+    "name" : "IMDBFlix",
+    "description" : "Automatically gathers IMDB rating when hovering over movies on Netflix.",
+    "version" : "1.0",
+    
+    "page_action:" : {
+        "default_icon" : {
+            "16" : "images/..",
+            "24" : "images/..", 
+            "32" : "images/.."
+        }
+    },
+    "background" : {
+        "scripts" : ["background.js"],
+        "persistent" : false
+    }
+} 
