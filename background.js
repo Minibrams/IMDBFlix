@@ -16,8 +16,11 @@ setInterval(() => {
         $.getJSON(currentTitleJSONUrl, function (data) {
             // Write the result to the title card
             let title = currentTitle.innerHTML;
-            let augmentedTitle = getFormattedRating(title, data.imdbRating);
-            currentTitle.innerHTML = augmentedTitle;
+            let rating = data.imdbRating == undefined ||
+                         isNaN(data.imdbRating) ? "Unavailable" :
+                                                  data.imdbRating;
+
+            currentTitle.innerHTML = getFormattedRating(title, data.imdbRating);
         });
     }
 }, 1000);
@@ -33,5 +36,5 @@ function getFormattedRating(title, rating) {
                 rating > 6.5 ? "yellow" : 
                 rating > 5   ? "orange" : "red";
 
-    return title + "<br><span style = \"background-color: rgba(0, 0, 0, 0.4); padding: 2px 5px 2px 5px; border-radius: 5px\">IMDB: <span style = \"font-weight: bold; color: " + color + "\">" + rating + "</span></span>";
+    return "<span style = \"background-color: rgba(0, 0, 0, 0.4); padding: 2px 5px 2px 5px; border-radius: 5px\">IMDB: <span style = \"font-weight: bold; color: " + color + "\">" + rating + "</span></span><br>" + title;
 } 
