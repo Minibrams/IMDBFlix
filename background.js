@@ -1,9 +1,21 @@
-console.log("We're through boysss");
+let currentTitle = null;
+
+let API_KEY = "3b294e4";
 
 setInterval(() => {    
-    let titleDivs = document.getElementsByClassName("bob-title");
+    let hoveredTitle = document.getElementsByClassName("bob-title")[0];
 
-    for (let i = 0; i < titleDivs.length; i++) {
-        console.log(titleDivs[i].innerHTML);
+    if (currentTitle != hoveredTitle &&
+        hoveredTitle != undefined  ) {
+
+        currentTitle = hoveredTitle;
+        currentTitleJSONUrl = getAPISearchURL(currentTitle);
+
+        
     }
-}, 10);
+}, 1000);
+
+function getAPISearchURL(title) {
+    console.log("Reading from: www.omdbapi.com/?apikey=" + API_KEY + "&t=" + title);
+    return "www.omdbapi.com/?apikey=" + API_KEY + "&t=" + title; 
+}
