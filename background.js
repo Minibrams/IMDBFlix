@@ -17,6 +17,7 @@ setInterval(() => {
             // Write the result to the title card
             let title = currentTitle.innerHTML;
             let rating = data.imdbRating == undefined ||
+                         data == undefined            ||
                          isNaN(data.imdbRating) ? "Unavailable" :
                                                   data.imdbRating;
 
