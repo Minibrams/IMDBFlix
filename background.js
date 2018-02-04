@@ -11,7 +11,9 @@ setInterval(() => {
         currentTitle = hoveredTitle;
         currentTitleJSONUrl = getAPISearchURL(currentTitle);
 
-        
+        $.getJSON(currentTitleJSONUrl, data => {
+            console.log(data);
+        });
     }
 }, 1000);
 
