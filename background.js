@@ -15,7 +15,9 @@ setInterval(() => {
         console.log("API is: " + currentTitleJSONUrl);
 
         $.getJSON(currentTitleJSONUrl, function (data) {
-            console.log(data.imdbRating);
+            // Write the result to the page
+            let title = currentTitle.innerHTML;
+            currentTitle.innerHTML = title + " (IMDB: " + data.imdbRating + ")";
         });
     }
 }, 1000);
