@@ -2,8 +2,8 @@
     "manifest_version" : 2,
     
     "name" : "IMDBFlix",
-    "description" : "Automatically fetches IMDB rating when hovering over movies on Netflix.",
-    "version" : "1.1",
+    "description" : "Automatically fetches IMDB rating and actors when hovering over movies on Netflix.",
+    "version" : "1.1.2",
     "icons" : {
         "128" : "images/imdbflix_128.png",
         "48" : "images/imdbflix_48.png",
